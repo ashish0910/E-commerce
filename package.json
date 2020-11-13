@@ -1,0 +1,31 @@
+{
+  "name": "e-commerce",
+  "version": "1.0.0",
+  "description": "E-commerce Platform using MERN Stack",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ashish0910/E-commerce.git"
+  },
+  "keywords": [
+    "E-commerce",
+    "MERN",
+    "React",
+    "Node",
+    "Express",
+    "MongoDB",
+    "React.js",
+    "Node.js",
+    "Backend",
+    "Frontend"
+  ],
+  "author": "ashish0910",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ashish0910/E-commerce/issues"
+  },
+  "homepage": "https://github.com/ashish0910/E-commerce#readme"
+}
