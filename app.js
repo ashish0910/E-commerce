@@ -33,9 +33,8 @@ mongoose.connect(
   }
 );
 
-app.get("/", (req, res) => {
-  res.send("Hello");
-});
+// Routes
+app.use("/user", require("./routes/userRoutes"));
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
