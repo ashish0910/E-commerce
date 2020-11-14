@@ -37,6 +37,7 @@ mongoose.connect(
 app.use("/user", require("./routes/userRoutes"));
 app.use("/api", require("./routes/categoryRoutes"));
 app.use("/api", require("./routes/upload"));
+app.use("/api", require("./routes/productRoutes"));
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
