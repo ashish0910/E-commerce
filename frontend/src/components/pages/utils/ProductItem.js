@@ -1,6 +1,6 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import "./ProductItem.css";
+import Button from "./Button";
 
 function ProductItem({ product }) {
   return (
@@ -12,12 +12,7 @@ function ProductItem({ product }) {
         <span>₹{product.price}</span>
         <p>{product.description}</p>
       </div>
-      <div className="row_btn">
-        <Link id="btn_buy">Buy</Link>
-        <Link id="btn_view" to={`/detail/${product._id}`}>
-          View
-        </Link>
-      </div>
+      <Button product={product} />
     </div>
   );
 }

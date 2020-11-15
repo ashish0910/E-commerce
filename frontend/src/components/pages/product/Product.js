@@ -2,18 +2,21 @@ import React, { useEffect } from "react";
 import { useStateProviderValue } from "../../../StateProvider";
 import ProductItem from "../utils/ProductItem";
 import "./Product.css";
+import Loading from "../utils/Loading";
 
 function Product() {
   const [{ products }, dipatch] = useStateProviderValue();
   useEffect(() => {}, [products]);
   return (
-    <div className="products">
+    <div>
       {products.hasOwnProperty("length") ? (
-        products.map((product) => {
-          return <ProductItem key={product._id} product={product} />;
-        })
+        <div className="products">
+          {products.map((product) => {
+            return <ProductItem key={product._id} product={product} />;
+          })}
+        </div>
       ) : (
-        <div>No product found</div>
+        <Loading />
       )}
     </div>
   );
