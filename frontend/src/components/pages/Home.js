@@ -2,7 +2,7 @@ import React from "react";
 import { Switch, Route } from "react-router-dom";
 import Product from "./product/Product";
 import Login from "./auth/Login";
-import Register from "./auth/Login";
+import Register from "./auth/Register";
 import Cart from "./cart/Cart";
 import Categories from "./categories/Categories";
 import NotFound from "./utils/NotFound";
