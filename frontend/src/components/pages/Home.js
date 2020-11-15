@@ -6,12 +6,16 @@ import Register from "./auth/Login";
 import Cart from "./cart/Cart";
 import Categories from "./categories/Categories";
 import NotFound from "./utils/NotFound";
+import DetailProduct from "./product/DetailProduct";
 
 function Home() {
   return (
     <Switch>
       <Route path="/" exact>
         <Product />
+      </Route>
+      <Route path="/detail/:id" exact>
+        <DetailProduct />
       </Route>
       <Route path="/login" exact>
         <Login />
