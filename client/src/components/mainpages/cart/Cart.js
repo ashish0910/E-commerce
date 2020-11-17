@@ -1,7 +1,7 @@
 import React, { useContext, useState, useEffect } from "react";
 import { GlobalState } from "../../../GlobalState";
 import axios from "axios";
-import PaypalButton from "./PaypalButton";
+import { v4 as uuidv4 } from "uuid";
 
 function Cart() {
   const state = useContext(GlobalState);
@@ -69,9 +69,12 @@ function Cart() {
     }
   };
 
-  const tranSuccess = async (payment) => {
-    const { paymentID, address } = payment;
-
+  const tranSuccess = async () => {
+    const paymentID = uuidv4();
+    const address = {
+      country: "IN",
+      state: "DEL",
+    };
     await axios.post(
       "/api/payment",
       { cart, paymentID, address },
@@ -118,7 +121,16 @@ function Cart() {
 
       <div className="total">
         <h3>Total: ₹ {total}</h3>
-        <PaypalButton total={total} cart={cart} />
+        <div className="btn_buy">
+          <button
+            onClick={(e) => {
+              e.preventDefault();
+              tranSuccess();
+            }}
+          >
+            BUY
+          </button>
+        </div>
       </div>
     </div>
   );
