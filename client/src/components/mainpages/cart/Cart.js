@@ -72,8 +72,10 @@ function Cart() {
   const tranSuccess = async () => {
     const paymentID = uuidv4();
     const address = {
-      country: "IN",
+      country_code: "IN",
       state: "DEL",
+      recipient_name: "User name",
+      postal_code: "111111",
     };
     await axios.post(
       "/api/payment",
