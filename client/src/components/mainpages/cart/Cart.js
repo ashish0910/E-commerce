@@ -45,12 +45,15 @@ function Cart() {
   const decrement = (id) => {
     cart.forEach((item) => {
       if (item._id === id) {
-        item.quantity === 1 ? (item.quantity = 1) : (item.quantity -= 1);
+        if (item.quantity === 1) {
+          removeProduct(id);
+        } else {
+          item.quantity -= 1;
+          setCart([...cart]);
+          addToCart(cart);
+        }
       }
     });
-
-    setCart([...cart]);
-    addToCart(cart);
   };
 
   const removeProduct = (id) => {
