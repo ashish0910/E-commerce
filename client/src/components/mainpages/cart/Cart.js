@@ -121,16 +121,15 @@ function Cart() {
 
       <div className="total">
         <h3>Total: ₹ {total}</h3>
-        <div className="btn_buy">
-          <button
-            onClick={(e) => {
-              e.preventDefault();
-              tranSuccess();
-            }}
-          >
-            BUY
-          </button>
-        </div>
+        <button
+          className="checkout_button"
+          onClick={(e) => {
+            e.preventDefault();
+            tranSuccess();
+          }}
+        >
+          BUY
+        </button>
       </div>
     </div>
   );
